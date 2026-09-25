@@ -1,0 +1,397 @@
+.app-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.app-logo {
+  flex-shrink: 0;
+}
+
+.app-brand {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.persist-notice {
+  background: var(--accent-soft);
+  border: 1px solid #c7d2fe;
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem 0;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.125rem;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.0625rem;
+}
+
+.section-intro {
+  margin: -0.25rem 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.date-input {
+  width: 100%;
+  max-width: 16rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.mood-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.mood-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .mood-options {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.65rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.mood-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mood-option.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.mood-score {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.125rem;
+}
+
+.mood-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.note-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 4.5rem;
+}
+
+.hint {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.form-actions,
+.data-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn.secondary {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn.secondary:hover:not(:disabled) {
+  border-color: #cbd5e1;
+}
+
+.btn.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: #fecaca;
+}
+
+.error-banner,
+.info-banner {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+}
+
+.error-banner {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.info-banner {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.week-strip-row {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.week-day.selected {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.week-day.today .week-day-label {
+  font-weight: 700;
+}
+
+.week-day-label {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.week-day-mood {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+.week-day-mood.empty {
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+.week-day-mood.mood-1 {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.week-day-mood.mood-2 {
+  background: #ffedd5;
+  color: #9a3412;
+}
+.week-day-mood.mood-3 {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.week-day-mood.mood-4 {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.week-day-mood.mood-5 {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.day-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: 22rem;
+  overflow: auto;
+}
+
+.day-list-item {
+  width: 100%;
+  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) auto;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.day-list-item.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.day-list-date {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.day-list-mood {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  justify-self: end;
+}
+
+.mood-pill {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.mood-pill.mood-1 {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.mood-pill.mood-2 {
+  background: #ffedd5;
+  color: #9a3412;
+}
+.mood-pill.mood-3 {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.mood-pill.mood-4 {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.mood-pill.mood-5 {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.no-entry {
+  color: var(--text-muted);
+}
+
+.day-list-note {
+  grid-column: 1 / -1;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.app-footer p {
+  margin: 0 0 0.5rem;
+}
+
+.app-footer nav a {
+  font-weight: 600;
+}
