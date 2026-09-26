@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AppFooter } from './components/AppFooter';
+import { BuildHouseDailyAd } from './components/BuildHouseDailyAd';
 import { DataPanel } from './components/DataPanel';
 import { EntryForm } from './components/EntryForm';
 import { RecentDays } from './components/RecentDays';
@@ -108,6 +109,7 @@ function App() {
         </main>
       )}
 
+      <BuildHouseDailyAd />
       <AppFooter />
     </div>
   );
