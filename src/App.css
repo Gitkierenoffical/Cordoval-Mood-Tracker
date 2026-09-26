@@ -380,8 +380,37 @@
   text-overflow: ellipsis;
 }
 
-.app-footer {
+.build-house-daily-ad {
   margin-top: 2rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.build-house-daily-ad__link {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.build-house-daily-ad__link:focus {
+  outline: none;
+}
+
+.build-house-daily-ad__link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.build-house-daily-ad__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.app-footer {
+  margin-top: 1.25rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   font-size: 0.875rem;
